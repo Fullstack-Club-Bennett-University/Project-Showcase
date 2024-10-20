@@ -6,6 +6,7 @@ import { FaClock, FaEdit, FaTag, FaCalendarAlt } from 'react-icons/fa';
 const Ticket = () => {
   const { id } = useParams(); 
   const [ticket, setTicket] = useState(null);
+  console.log(id)
 
   useEffect(() => {
     const fetchTicket = async () => {

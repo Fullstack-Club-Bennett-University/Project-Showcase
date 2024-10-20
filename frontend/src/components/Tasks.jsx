@@ -6,6 +6,10 @@ const Tasks = () => {
     { id: 1, title: "Lunch with Aman", date: "24 Oct 2022", completed: false },
     { id: 2, title: "Team basketball", date: "24 Oct 2022", completed: false },
     { id: 3, title: "Speed run", date: "24 Oct 2022", completed: false },
+    { id: 3, title: "Speed run", date: "24 Oct 2022", completed: false },
+    { id: 3, title: "Speed run", date: "24 Oct 2022", completed: false },
+    { id: 3, title: "Speed run", date: "24 Oct 2022", completed: false },
+    { id: 3, title: "Speed run", date: "24 Oct 2022", completed: false },
     {
       id: 4,
       title: "lalalala is lalalala",
@@ -37,9 +41,11 @@ const Tasks = () => {
   };
 
   return (
-    <div className="p-5 mt-6 bg-white rounded-lg shadow-lg">
+    <div className="p-5 mt-6 bg-white rounded-lg shadow-lg ">
       <h3 className="text-lg font-semibold text-indigo-500">Tasks To Do</h3>
-      <ul className="mt-4 space-y-2">
+      <ul className="mt-4 space-y-2 max-h-[200px] overflow-y-auto">
+        {/* mt-4 space-y-2 max-h-80 overflow-y-auto">
+        {tasks.map((task) => ( */}
         {tasks.map((task) => (
           <li
             key={task.id}
