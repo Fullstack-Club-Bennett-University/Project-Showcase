@@ -3,7 +3,21 @@ import { useNavigate } from "react-router-dom";
 
 const TicketList = ({ title, tickets }) => {
   const navigate = useNavigate();
-  // console.log(tickets)
+
+  // Helper function to determine the background color based on status
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "accepted":
+        return "bg-green-500"; // Green for accepted
+      case "ignored":
+        return "bg-red-500";   // Red for ignored
+      case "pending":
+        return "bg-yellow-500"; // Yellow for pending
+      default:
+        return "bg-gray-500";  // Default gray color for unknown status
+    }
+  };
+
   return (
     <div className="p-5 bg-white rounded-lg shadow-lg">
       <h3 className="mb-4 text-lg font-semibold text-indigo-600">{title}</h3>
@@ -31,7 +45,12 @@ const TicketList = ({ title, tickets }) => {
                 >
                   View Details
                 </button>
-                <p className="px-3 py-1 mt-2 text-xs text-white bg-purple-500 rounded">
+                {/* Status label with dynamic color */}
+                <p
+                  className={`px-3 py-1 mt-2 text-xs text-white rounded ${getStatusColor(
+                    ticket.status
+                  )}`}
+                >
                   {ticket.status}
                 </p>
               </div>

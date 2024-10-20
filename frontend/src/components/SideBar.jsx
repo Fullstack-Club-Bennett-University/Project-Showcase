@@ -1,5 +1,4 @@
 import { FaBars } from "react-icons/fa";
-
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
@@ -25,9 +24,9 @@ const Sidebar = () => {
     <div>
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-40 transform   ${
+        className={`fixed md:sticky top-0 left-0 z-40 transform ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform md:relative md:translate-x-0 md:w-64 bg-gradient-to-br from-black via-indigo-800 to-purple-800 text-white w-64 h-screen`}
+        } transition-transform md:translate-x-0 md:w-64 bg-gradient-to-br from-black via-indigo-800 to-purple-800 text-white w-64 h-screen`}
       >
         <div className="flex items-center justify-between p-4">
           <h2 className="text-xl font-bold">Dashboard</h2>

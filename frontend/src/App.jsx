@@ -103,7 +103,7 @@ const Layout = () => {
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/tasks-assigned" element={<TaskList />} />
           <Route path="/ticket/:id" element={<Ticket/>}  />
-          {/* <Route path="*" element={<ComingSoon />} /> */}
+          <Route path="*" element={<ComingSoon />} />
         </Routes>
       </div>
     </div>

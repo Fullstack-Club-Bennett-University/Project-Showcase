@@ -48,9 +48,6 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-// import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
-import TicketList from "../components/TicketListParent";
-import TicketListChild from "./TicketListChildren";
 import TicketsAtHome from "./TicketsAtHome";
 
 const Tickets = () => {
@@ -62,7 +59,8 @@ const Tickets = () => {
         const res = await axios.get(
           "http://localhost:3000/api/tickets/alltickets"
         );
-        setTickets(res.data);
+        // Reverse the order of the tickets so the newest appear at the top
+        setTickets(res.data.reverse());
       } catch (error) {
         console.log("Error fetching the tickets", error);
       }
@@ -70,15 +68,48 @@ const Tickets = () => {
     fetchTicket();
   }, []);
 
-  
-
   return (
-    <div className="p-4 sm:p-6 mt-4 sm:mt-8 bg-white rounded-lg shadow-xl mx-auto w-full   ">
-     
+    <div className="p-4 sm:p-6 mt-4 sm:mt-8 bg-white rounded-lg shadow-xl mx-auto w-full">
       <TicketsAtHome title="Tickets" tickets={tickets} />
-      
     </div>
   );
 };
 
 export default Tickets;
+
+// import axios from "axios";
+// import React, { useEffect, useState } from "react";
+// // import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
+// import TicketList from "../components/TicketListParent";
+// import TicketListChild from "./TicketListChildren";
+// import TicketsAtHome from "./TicketsAtHome";
+
+// const Tickets = () => {
+//   const [tickets, setTickets] = useState([]);
+
+//   useEffect(() => {
+//     const fetchTicket = async () => {
+//       try {
+//         const res = await axios.get(
+//           "http://localhost:3000/api/tickets/alltickets"
+//         );
+//         setTickets(res.data);
+//       } catch (error) {
+//         console.log("Error fetching the tickets", error);
+//       }
+//     };
+//     fetchTicket();
+//   }, []);
+
+  
+
+//   return (
+//     <div className="p-4 sm:p-6 mt-4 sm:mt-8 bg-white rounded-lg shadow-xl mx-auto w-full   ">
+     
+//       <TicketsAtHome title="Tickets" tickets={tickets} />
+      
+//     </div>
+//   );
+// };
+
+// export default Tickets;
