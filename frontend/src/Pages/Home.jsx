@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import Navbar from "../components/Navbar";
 import PageTwo from "../components/PageTwo";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [ticket, setTicket] = useState([]);
@@ -54,19 +55,15 @@ const Home = () => {
           </div>
           <div className="mt-20 paragraph">
             <p className="max-w-2xl mx-auto mb-12 text-xl para text-slate-300 max-md:text-lg">
-              Build long-lasting relationships, save time and be more efficient
-              with the <br />
-              simple CRM software that's designed for growing teams working with
-              Colleges, Universities and B2B. <br />
-              Try us !
+              The feeling that everyone else has a life as full and complex as
+              your own. It can also be described as the realization that
+              everyone is living their own epic story, even strangers you pass
+              on the street
             </p>
           </div>
           <div className="p-4 buttons">
             <div>
-              <button className="p-2 mr-4 border rounded-xl hover:bg-white hover:text-black">
-                Try Us
-              </button>
-              <button className="p-2 mr-4 border rounded-xl hover:bg-white hover:text-black">
+              <button className="p-2 mr-4 border rounded-xl hover:text-gray-400 ">
                 About Us
                 {/* ab */}
               </button>
@@ -75,6 +72,7 @@ const Home = () => {
         </main>
       </div>
       <PageTwo />
+      <Footer />
     </>
   );
 };

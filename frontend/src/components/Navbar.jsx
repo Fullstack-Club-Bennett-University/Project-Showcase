@@ -1,17 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+// import logo from "../assets/l2-removebg.png";
 
 function Navbar() {
   const navigate = useNavigate();
   return (
     <div>
-      <nav className="flex justify-between p-3">
+      <nav className="flex  justify-between items-center  text-center p-3">
         <div className="items-center text-2xl max-md:text-xl">
-          Club Management System
+          <img className="h-10" src="./l2-removebg.png"></img>
         </div>
-        <div className="flex">
+        <div className="flex mr-[45px] ">
           <div className="flex items-center cursor-pointer gap-x-10 max-md:hidden">
             <div
+              className="hover:text-amber-300"
               onClick={() => {
                 navigate("/dashboard");
               }}
@@ -35,6 +37,7 @@ function Navbar() {
               Reosurces
             </div> */}
             <div
+              className="hover:text-amber-300"
               onClick={() => {
                 navigate("/dashboard-parent");
               }}
