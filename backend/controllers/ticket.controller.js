@@ -60,7 +60,6 @@ export const getTicket = async (req, res) => {
   
     try {
       const ticket = await Ticket.findById(id);
-      if (!form) return res.status(404).json({ message: "Form not found" });
   
       res.status(200).json(ticket);
     } catch (error) {

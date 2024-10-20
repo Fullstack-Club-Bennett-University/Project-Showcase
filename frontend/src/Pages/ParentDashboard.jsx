@@ -1,16 +1,29 @@
 import React, { useEffect, useState } from "react";
 import TicketList from "../components/TicketListParent";
 import axios from "axios";
-import { FaHome, FaTicketAlt, FaChild, FaBell, FaCalendarAlt, FaUser, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaHome,
+  FaTicketAlt,
+  FaChild,
+  FaBell,
+  FaCalendarAlt,
+  FaUser,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+import TaskAssignmentForm from "./TaskAssign";
 
 const ParentDashboard = () => {
   const [tickets, setTickets] = useState([]);
+  // console.log(tickets)
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const fetchTicket = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/tickets/alltickets");
+        const res = await axios.get(
+          "http://localhost:3000/api/tickets/alltickets"
+        );
         setTickets(res.data);
       } catch (error) {
         console.error("Error fetching tickets:", error);
@@ -27,7 +40,7 @@ const ParentDashboard = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-40 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform md:relative md:translate-x-0 md:w-64 bg-gray-800 text-white w-64 h-screen`}>
+      {/* <div className={`fixed inset-y-0 left-0 z-40 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform md:relative md:translate-x-0 md:w-64 bg-gray-800 text-white w-64 h-screen`}>
         <div className="flex items-center justify-between p-4">
           <h2 className="text-xl font-bold">Parent Dashboard</h2>
           <FaTimes className="cursor-pointer md:hidden" onClick={toggleSidebar} />
@@ -54,12 +67,15 @@ const ParentDashboard = () => {
             </li>
           </ul>
         </nav>
-      </div>
+      </div> */}
 
       {/* Main Content */}
       <div className="flex-1 p-6">
         {/* Menu Button for mobile */}
-        <button className="p-2 mb-6 text-white bg-gray-800 rounded-full md:hidden" onClick={toggleSidebar}>
+        <button
+          className="p-2 mb-6 text-white bg-gray-800 rounded-full md:hidden"
+          onClick={toggleSidebar}
+        >
           <FaBars />
         </button>
 
@@ -76,7 +92,9 @@ const ParentDashboard = () => {
           </div>
 
           <div className="p-4 bg-white rounded-lg shadow-lg">
-            <h3 className="mb-2 text-xl font-semibold">Children's Performance</h3>
+            <h3 className="mb-2 text-xl font-semibold">
+              Children's Performance
+            </h3>
             <p>Track performance and grades.</p>
           </div>
 
@@ -94,17 +112,25 @@ const ParentDashboard = () => {
             <h3 className="mb-2 text-xl font-semibold">Alerts</h3>
             <p>No alerts at the moment.</p>
           </div>
+          <div className="">
+            <TaskAssignmentForm />
+          </div>
         </div>
 
         {/* Tickets Section */}
-        <div className="p-4 overflow-y-auto bg-white rounded-lg shadow-lg h-96">
+        <div className="p-4 overflow-y-auto bg-white rounded-lg shadow-lg h-[500px]">
           <h2 className="mb-4 text-2xl font-semibold">Your Tickets</h2>
           <TicketList title="Tickets" tickets={tickets} />
         </div>
       </div>
 
       {/* Background overlay for sidebar on mobile */}
-      {sidebarOpen && <div className="fixed inset-0 z-30 bg-black opacity-50" onClick={toggleSidebar}></div>}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black opacity-50"
+          onClick={toggleSidebar}
+        ></div>
+      )}
     </div>
   );
 };

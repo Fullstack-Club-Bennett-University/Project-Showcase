@@ -3,16 +3,18 @@ import AddRequestCard from "./AddRequestCard";
 import Customers from "./Members";
 import Tasks from "./Tasks";
 import Tickets from "./Tickets";
+import TaskList from "./TaskList";
 
 const Dashboard = () => {
   return (
-    <div className="w-4/5 p-6 space-y-6">
+    <div className=" p-6 space-y-3 sticky top-0">
       <div className="grid grid-cols-2 gap-6">
         <AddRequestCard />
         <Customers />
       </div>
-      <Tasks />
-      <Tickets/>
+      <TaskList />
+
+      <Tickets />
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { FcSalesPerformance } from "react-icons/fc";
 
@@ -9,62 +9,62 @@ gsap.registerPlugin(ScrollTrigger);
 const PageTwo = () => {
   useEffect(() => {
     gsap.fromTo(
-      '.heading',
+      ".heading",
       { opacity: 0, y: -50 },
       {
         opacity: 1,
         y: 0,
         duration: 1.2,
-        ease: 'power3.out',
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: '.heading',
-          start: 'top 90%', // Adjusted to trigger earlier
+          trigger: ".heading",
+          start: "top 90%", // Adjusted to trigger earlier
         },
       }
     );
 
     gsap.fromTo(
-      '.paragraph',
+      ".paragraph",
       { opacity: 0, y: -50 },
       {
         opacity: 1,
         y: 0,
         duration: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: '.paragraph',
-          start: 'top 90%', // Adjusted to trigger earlier
+          trigger: ".paragraph",
+          start: "top 90%", // Adjusted to trigger earlier
         },
       }
     );
 
     gsap.fromTo(
-      '.card',
+      ".card",
       { opacity: 0, scale: 0.8 },
       {
         opacity: 1,
         scale: 1,
         duration: 0.8,
-        ease: 'back.out(1.7)',
+        ease: "back.out(1.7)",
         stagger: 0.3,
         scrollTrigger: {
-          trigger: '.card',
-          start: 'top 95%', // Adjusted to trigger earlier
+          trigger: ".card",
+          start: "top 95%", // Adjusted to trigger earlier
         },
       }
     );
 
     gsap.fromTo(
-      '.last-section',
+      ".last-section",
       { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
         duration: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: '.last-section',
-          start: 'top 90%', // Adjusted to trigger earlier
+          trigger: ".last-section",
+          start: "top 90%", // Adjusted to trigger earlier
         },
       }
     );
@@ -83,7 +83,7 @@ const PageTwo = () => {
       <div className="flex flex-col justify-center gap-8 mt-20 md:flex-row">
         <div className="w-full p-4 text-center bg-white rounded-lg shadow-md md:w-1/3 card">
           <div className="flex justify-center mb-4 text-4xl">
-            <FcSalesPerformance/>
+            <FcSalesPerformance />
           </div>
           <h3 className="mb-2 text-lg font-semibold md:text-xl">Sales</h3>
           <p className="text-gray-600">
@@ -109,7 +109,7 @@ const PageTwo = () => {
 
         <div className="w-full p-4 text-center bg-white rounded-lg shadow-md md:w-1/3 card">
           <div className="flex justify-center mb-4 text-4xl text-center">
-            <MdMiscellaneousServices/>
+            <MdMiscellaneousServices />
           </div>
           <h3 className="mb-2 text-lg font-semibold md:text-xl">Service</h3>
           <p className="text-gray-600">
@@ -126,7 +126,7 @@ const PageTwo = () => {
         <div>
           <div className="text-2xl font-bold md:text-4xl">
             <h1 className="text-center">
-              Why 3,000+ businesses <br /> choose us
+              <br /> choose us
             </h1>
           </div>
           <div className="flex justify-center mt-4 md:mt-6">
